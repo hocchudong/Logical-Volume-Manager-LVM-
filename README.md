@@ -1,17 +1,31 @@
 
 # Logical Volume Manager (LVM)
 
-## Mục lục
+### Mục lục
 
 [1. Giới thiệu về Logical Volume Manager (LVM)] (#Gioithieu)
+- [1.1 LVM là gì] (#LVM)
+- [1.2 Vai trò của LVM] (#Vaitro)
+- [1.3 Các thành phần trong LVM] (#Thanhphan)
+
+[2. Hướng dẫn sử dụng LVM] (#Huongdan)
+- [2.1 Chuẩn bị] (#Chuanbi)
+- [2.2 Tạo Logical Volume trên LVM] (#Taolvm)
+- [2.3 Thay đổi dung lượng Logical Volume trên LVM] (#Thaydoilv)
+- [2.4 Thay đổi dung lượng Volume Group trên LVM] (#Thaydoivg)
+- [2.5 Xóa Logical Volume, Volume Group, Physical Volume] (#Xoa)
+
+[3. Kết luận] (#Ketluan)
 
 <a name="Gioithieu"></a>
 ## 1.Giới thiệu về Logical Volume Manager (LVM)
 
+<a name="LVM"></a>
 ###1.1 LVM là gì
 
 Logical Volume Manager (LVM): là phương pháp cho phép ấn định không gian đĩa cứng thành những logical Volume khiến cho việc thay đổi kích thước trở nên dễ dàng hơn (so với partition). Với kỹ thuật Logical Volume Manager (LVM) bạn có thể thay đổi kích thước mà không cần phải sửa lại table của OS. Điều này thật hữu ich với những trường hợp bạn đã sử dụng hết phần bộ nhớ còn trống của partition và muốn mở rộng dung lượng của nó
 
+<a name="Vaitro"></a>
 ###1.2 Vai trò của LVM
 
 LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ của ổ cứng
@@ -24,6 +38,7 @@ LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ c�
 <li>Có thể kết hợp Hot Swapping (thao tác thay thế nóng các thành phần bên trong máy tính)</li>
 </ul>
 
+<a name="Thanhphan"></a>
 ###1.3 Các thành phần trong LVM
 
 **Mô hình các thành phần trong LVM**
@@ -89,6 +104,7 @@ Ví dụ bạn có 4 ổ đĩa mỗi ổ 5GB khi bạn kết hợp nó lại th�
 
 ## 2. Hướng dẫn sử dụng LVM
 
+<a name="Chuanbi"></a>
 ### 2.1 Chuẩn bị
 
 <ul>
@@ -99,6 +115,7 @@ Ví dụ bạn có 4 ổ đĩa mỗi ổ 5GB khi bạn kết hợp nó lại th�
 
 <img src="http://i.imgur.com/5gdAnRr.png">
 
+<a name="Taolvm"></a>
 ### 2.2 Tạo Logical Volume trên LVM
 
 **B1. Kiểm tra các Hard Drives có trên hệ thống**
@@ -219,6 +236,7 @@ Kiểm tra lại dung lượng của thư mục đã được mount:
 
 <img src="http://i.imgur.com/rdzFy1C.png">
 
+<a name="Thaydoilv"></a>
 ### 2.3 Thay đổi dung lượng Logical Volume trên LVM
 
 Ở phần trước, mình đã tiến hành tạo Logical Volume trong LVM. Ở phần này, chúng ta sẽ tìm hiểu làm thế nào để có thể thay đổi dung lượng của 1 Logical Volume đã được tạo ở phần trước.
@@ -281,6 +299,7 @@ Kiểm tra kết quả ta được như sau:
 
 <img src="http://i.imgur.com/1969nvB.png">
 
+<a name="Thaydoivg"></a>
 ## 2.4 Thay đổi dung lượng Volume Group trên LVM
 
 Ở phần trước mình có thể tăng kích thước của Logical Volume nhưng với điều kiện Volume Group của Logical Volume đó còn dung lượng. Phần này chúng ta sẽ tìm hiểu xem làm thế nào có thể mở rộng thêm kích thước của Volume Group cũng như thu hồi dung lượng của nó.
@@ -309,6 +328,7 @@ Chúng ta có thể cắt 1 Physical Volume ra khỏi Volume Group như sau:
 
 <img src="http://i.imgur.com/5CoUoTy.png">
 
+<a name="Xoa"></a>
 ## 2.5 Xóa Logical Volume, Volume Group, Physical Volume
 
 **Xóa Logical Volumes**
@@ -345,5 +365,6 @@ Cuối cùng là xóa Physical Volume:
 
 Vậy là mình đã hoàn thành một bài lab đơn giản về LVM.
 
-## Tổng kết
+<a name="Tongket"></a>
+## 3. Tổng kết
 
