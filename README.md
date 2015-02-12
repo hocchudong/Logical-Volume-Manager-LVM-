@@ -102,6 +102,7 @@ Ví dụ bạn có 4 ổ đĩa mỗi ổ 5GB khi bạn kết hợp nó lại th�
 <li>Quản lý vị trí vật lý của mọi thành phần dữ liệu</li>
 </ul>
 
+<a name="Huongdan"></a>
 ## 2. Hướng dẫn sử dụng LVM
 
 <a name="Chuanbi"></a>
