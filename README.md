@@ -3,7 +3,7 @@
 
 ## Mục lục
 
-[1. Giới thiệu về Logical Volume Manager (LVM) (#Gioithieu)
+[1. Giới thiệu về Logical Volume Manager (LVM)] (#Gioithieu)
 
 <a name="Gioithieu"></a>
 ## 1.Giới thiệu về Logical Volume Manager (LVM)
