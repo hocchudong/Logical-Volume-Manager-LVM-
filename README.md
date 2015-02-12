@@ -11,11 +11,13 @@ Logical Volume Manager (LVM): là phương pháp cho phép ấn định không g
 
 LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ của ổ cứng
 
+<ul>
 <li>Không để hệ thống bị gián đoạn hoạt động</li>
 
 <li>Không làm hỏng dịch vụ</li>
 
 <li>Có thể kết hợp Hot Swapping (thao tác thay thế nóng các thành phần bên trong máy tính)</li>
+</ul>
 
 ###1.3 Các thành phần trong LVM
 
