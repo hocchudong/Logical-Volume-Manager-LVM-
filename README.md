@@ -136,13 +136,13 @@ Tương tự, bạn tạo thêm các partition primary từ sdb
 
 <img src="http://i.imgur.com/awFqKgt.png">
 
-Bạn tạo các partition primary từ `sdc` bằng lệnh `fdisk /dev/sdc`
+Tạo các partition primary từ `sdc` bằng lệnh `fdisk /dev/sdc`
 
 <img src="http://i.imgur.com/O4SEOBE.png">
 
 **B3. Tạo Physical Volume**
 
-Bạn tạo các Physical Volume là `/dev/sdb1` và `/dev/sdc1` bằng các lệnh sau:
+Tạo các Physical Volume là `/dev/sdb1` và `/dev/sdc1` bằng các lệnh sau:
 
 `# pvcreate /dev/sdb1`
 
@@ -154,7 +154,7 @@ Bạn có thể kiểm tra các Physical Volume bằng câu lệnh `pvs` hoặc 
 
 **B4. Tạo Volume Group**
 
-Chúng ta có thể nhóm các Physical Volume thành 1 Volume Group bằng cách sử dụng câu lệnh sau:
+Tiếp theo, mình sẽ nhóm các Physical Volume thành 1 Volume Group bằng cách sử dụng câu lệnh sau:
 
 `# vgcreate vg-demo1 /dev/sdb1 /dev/sdc1`
 
@@ -200,7 +200,7 @@ Có thể sử dụng câu lệnh sau để kiểm tra lại các Logical Volume
 
 **B7. Mount và sử dụng**
 
-Trong bài lab này, chúng ta sẽ tạo một thư mục để mount Logical Volume đã tạo vào thư mục đó
+Trong bài lab này, mình sẽ tạo ra một thư mục để mount Logical Volume đã tạo vào thư mục đó
 
 `# mkdir demo1`
 
@@ -216,9 +216,9 @@ Kiểm tra lại dung lượng của thư mục đã được mount:
 
 ### 2.3 Thay đổi dung lượng Logical Volume trên LVM
 
-Ở phần trước, chúng ta đã tìm hiểu những khái niệm cơ bản về LVM. Ở phần này, chúng ta sẽ tìm hiểu làm thế nào để có thể thay đổi dung lượng của 1 Logical Volume đã được tạo ở phần trước.
+Ở phần trước, mình đã tiến hành tạo Logical Volume trong LVM. Ở phần này, chúng ta sẽ tìm hiểu làm thế nào để có thể thay đổi dung lượng của 1 Logical Volume đã được tạo ở phần trước.
 
-Trước khi thay đổi dung lượng, chúng ta cần phải kiểm tra các thông tin hiện có:
+Trước khi thay đổi dung lượng, các bạn cần phải kiểm tra các thông tin hiện có:
 
 `# vgs`
 
@@ -228,7 +228,7 @@ Trước khi thay đổi dung lượng, chúng ta cần phải kiểm tra các t
 
 <img src="http://i.imgur.com/vvTdiJk.png">
 
-Ở đây, chúng ta có Logical Volume là lv-demo1, và giả sử Logical Volume này dung lượng đã đầy và chúng ta cần tăng kích thước của nó.
+Ở đây, mình đã tạo được Logical Volume là lv-demo1, và giả sử Logical Volume này dung lượng đã đầy và chúng ta cần tăng kích thước của nó.
 
 Logical Volume này thuộc Volume Group vg-demo1, để tăng kích thước, bước đầu tiên phải kiểm tra xem Volume Group còn dư dung lượng để kéo giãn Logical Volume không. Logical Volume thuộc 1 Volume Group nhất định, Volume Group đã cấp phát hết thì Logical Volume cũng không thể tăng dung lượng được. Để kiểm tra, ta dùng lệnh sau:
 
@@ -246,7 +246,7 @@ Với `-L` là tùy chọn để tăng kích thước
 
 <img src="http://i.imgur.com/ZaKf17j.png">
 
-Chúng ta kiểm tra lại bằng cách dùng lệnh `# lvs`
+Kiểm tra lại bằng cách dùng lệnh `# lvs`
 
 <img src="http://i.imgur.com/aLTcqin.png">
 
@@ -256,7 +256,7 @@ Sau khi tăng kích thước cho Logical Volume thì Logical Volume đã đượ
 
 <img src="http://i.imgur.com/hpaTvwd.png">
 
-Để giảm kích thước của Logical Volume, chúng ta trước hết phải umount Logical Volume mà mình muốn giảm
+Để giảm kích thước của Logical Volume, trước hết các bạn phải umount Logical Volume mà mình muốn giảm
 
 `# umount /dev/vg-demo1/lv-demo1`
 
@@ -264,7 +264,7 @@ Tiến hành giảm kích thước của Logical Volume
 
 `# lvreduce -L 20M /dev/vg-demo1/lv-demo1`
 
-Sau đó chúng ta phải tiến hành format lại Logical Volume
+Sau đó tiến hành format lại Logical Volume
 
 `# mkfs.ext4 /dev/vg-demo1/lv-demo1`
 
@@ -278,11 +278,11 @@ Kiểm tra kết quả ta được như sau:
 
 ## 2.4 Thay đổi dung lượng Volume Group trên LVM
 
-Ở phần trước chúng ta có thể tăng kích thước của Logical Volume nhưng với điều kiện Volume Group của Logical Volume đó còn dung lượng. Phần này chúng ta sẽ tìm hiểu xem làm thế nào có thể mở rộng thêm kích thước của Volume Group cũng như thu hồi dung lượng của nó.
+Ở phần trước mình có thể tăng kích thước của Logical Volume nhưng với điều kiện Volume Group của Logical Volume đó còn dung lượng. Phần này chúng ta sẽ tìm hiểu xem làm thế nào có thể mở rộng thêm kích thước của Volume Group cũng như thu hồi dung lượng của nó.
 
-Việc thay đổi kích thước của Volume Group chính là việc chúng ta nhóm thêm Physical Volume hay thu hồi Physical Volume ra khỏi Volume Group
+Việc thay đổi kích thước của Volume Group chính là việc nhóm thêm Physical Volume hay thu hồi Physical Volume ra khỏi Volume Group
 
-Trước tiên, chúng ta cần kiểm tra lại các partition và Volume Group
+Trước tiên, các bạn cần kiểm tra lại các partition và Volume Group
 
 `# vgs`
 
@@ -290,7 +290,7 @@ Trước tiên, chúng ta cần kiểm tra lại các partition và Volume Group
 
 <img src="http://i.imgur.com/6f70rvP.png">
 
-Chúng ta nhóm thêm 1 partition vào Volume Group như sau:
+Tiếp theo, nhóm thêm 1 partition vào Volume Group như sau:
 
 `# vgextend /dev/vg-demo1 /dev/sdb3`
 
@@ -316,7 +316,7 @@ Sau đó tiến hành xóa Logical Volume bằng câu lệnh sau:
 
 `# lvremove /dev/vg-demo1/lv-demo1`
 
-Chúng ta kiểm tra lại kết quả
+Ta kiểm tra lại kết quả
 
 <img src="http://i.imgur.com/bKyhNaF.png">
 
@@ -324,7 +324,7 @@ Chúng ta kiểm tra lại kết quả
 
 Trước khi xóa Volume Group, chúng ta phải xóa Logical Volume 
 
-Xóa Volume Group ta sử dụng lệnh sau:
+Xóa Volume Group bằng cách sử dụng lệnh sau:
 
 `# vgremove /dev/vg-demo1`
 
@@ -332,13 +332,13 @@ Xóa Volume Group ta sử dụng lệnh sau:
 
 **Xóa Physical Volume**
 
-Cuối cùng là xóa Physical Volume, ta sử dụng lệnh sau:
+Cuối cùng là xóa Physical Volume:
 
 `#  pvremove /dev/sdb3`
 
 <img src="http://i.imgur.com/4KrrO9u.png">
 
-Vậy là chúng ta đã hoàn thành một bài lab đơn giản về LVM.
+Vậy là mình đã hoàn thành một bài lab đơn giản về LVM.
 
 ## Tổng kết
 
