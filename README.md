@@ -72,6 +72,7 @@ Ví dụ bạn có 4 ổ đĩa mỗi ổ 5GB khi bạn kết hợp nó lại th�
 
 **File Systems**
 
+<ul>
 <li>Tổ chức và kiểm soát các tập tin</li>
  
 <li>Được lưu trữ trên ổ đĩa cho phép truy cập nhanh chóng và an toàn</li>
@@ -79,14 +80,17 @@ Ví dụ bạn có 4 ổ đĩa mỗi ổ 5GB khi bạn kết hợp nó lại th�
 <li>Sắp xếp dữ liệu trên đĩa cứng máy tính</li>
 
 <li>Quản lý vị trí vật lý của mọi thành phần dữ liệu</li>
+</ul>
 
 ## 2. Hướng dẫn sử dụng LVM
 
 ### 2.1 Chuẩn bị
 
+<ul>
 <li>Tạo máy ảo trên vmware Workstation cài hệ điều hành ubuntu server 12.04</li>
 
 <li>Add thêm một số ổ cứng vào máy ảo</li>
+</ul>
 
 <img src="http://i.imgur.com/5gdAnRr.png">
 
