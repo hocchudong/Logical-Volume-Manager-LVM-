@@ -15,7 +15,7 @@
 - [2.4 Thay đổi dung lượng Volume Group trên LVM] (#Thaydoivg)
 - [2.5 Xóa Logical Volume, Volume Group, Physical Volume] (#Xoa)
 
-[3. Kết luận] (#Ketluan)
+[3. Tổng kết] (#Tongket)
 
 <a name="Gioithieu"></a>
 ## 1.Giới thiệu về Logical Volume Manager (LVM)
