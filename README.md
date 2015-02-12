@@ -369,3 +369,16 @@ Vậy là mình đã hoàn thành một bài lab đơn giản về LVM.
 <a name="Tongket"></a>
 ## 3. Tổng kết
 
+Bài viết trên mình đã tổng hợp lại nhũng kiến thức cơ bản trong quá trình mình tìm hiểu về LVM, hy vọng nó có ích cho các bạn. 
+
+Bài viết đang có nhiều sai sót và chưa đầy đủ, mong các bạn góp ý cho mình để mình có thể hoàn thiện hơn.
+
+Một số tài liệu tham khảo:
+
+http://www.tecmint.com/extend-and-reduce-lvms-in-linux/
+
+http://www.tecmint.com/manage-multiple-lvm-disks-using-striping-io/
+
+http://www.tecmint.com/create-lvm-storage-in-linux/
+
+http://www.markus-gattol.name/ws/lvm.html#sec29
