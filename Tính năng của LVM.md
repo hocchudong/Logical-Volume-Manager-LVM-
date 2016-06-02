@@ -122,6 +122,8 @@ Sau khi quá trình kết thúc thì Snapshot Volume sẽ được xóa.
 
 mount lại Volume và vào thư mục /mnt/demo1. Nếu các file copy đã bị xóa thì quá trình đã hoàn thành.
 
+**Chú ý:** Dung lượng Snapshot tăng lên đúng bằng dung lượng tạo mới trên LV. Không thể tạo Snapshot mới ghi đè lên Snapshot cũ. Trường hợp bạn có 2 Snapshot cho cùng 1 ổ LV thì dữ liệu mới cũng được ghi cả vào 2 ổ Snapshot. 
+
 <a name="2"></a>
 ###2 Tính năng Thin Provisioning Volumes
 
