@@ -2,8 +2,7 @@
 
 Chuẩn bị:
 Máy ảo chạy hệ điều hành Ubuntu 14.04 có chế độ LVM cho ổ đĩa.
-Đã ad thêm các ổ cứng sau khi cài đặt
-
+Đã thêm các ổ cứng mới sau khi cài đặt
 
 ###Mục lục:
 [1 Tính năng Snapshot ](#1)
