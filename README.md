@@ -39,7 +39,7 @@ LVM là kỹ thuật quản lý việc thay đổi kích thước lưu trữ c�
 </ul>
 
 <a name="Thanhphan"></a>
-###1.3 Các thành phần trong LVM
+### 1.3 Các thành phần trong LVM
 
 **Mô hình các thành phần trong LVM**
 
