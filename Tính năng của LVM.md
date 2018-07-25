@@ -1,10 +1,10 @@
-#Các tính năng nâng cao của LVM
+# Các tính năng nâng cao của LVM
 
 Chuẩn bị:
 Máy ảo chạy hệ điều hành Ubuntu 14.04 có chế độ LVM cho ổ đĩa.
 Đã thêm các ổ cứng mới sau khi cài đặt
 
-###Mục lục:
+### Mục lục:
 [1 Tính năng Snapshot ](#1)
 
 - [1.1 Tạo Snapshot](#1.1)
@@ -34,7 +34,7 @@ Máy ảo chạy hệ điều hành Ubuntu 14.04 có chế độ LVM cho ổ đ�
 ====================== 
 
 <a name="1"></a>
-###1 Tính năng Snapshot
+### 1 Tính năng Snapshot
 
 LVM Snapshots are space efficient pointing time copies of lvm volumes. It works only with lvm and consume the space only when changes are made to the source logical volume to snapshot volume. If source volume has a huge changes made to sum of 1GB the same changes will be made to the snapshot volume.
 Snapshots can’t be use for backup option. Backups are Primary Copy of some data’s, so we cant use snapshot as a backup option.
@@ -125,7 +125,7 @@ mount lại Volume và vào thư mục /mnt/demo1. Nếu các file copy đã b�
 **Chú ý:** Dung lượng Snapshot tăng lên đúng bằng dung lượng tạo mới trên LV. Không thể tạo Snapshot mới ghi đè lên Snapshot cũ. Trường hợp bạn có 2 Snapshot cho cùng 1 ổ LV thì dữ liệu mới cũng được ghi cả vào 2 ổ Snapshot. 
 
 <a name="2"></a>
-###2 Tính năng Thin Provisioning Volumes
+### 2 Tính năng Thin Provisioning Volumes
 
 Tính năng này cho phép chúng ta tạo ra số Volume có tổng dung lượng lớn hơn số lượng cho phép.
 
@@ -188,7 +188,7 @@ Phần dung lượng của Client đã tăng lên.
 Tổng kết lại thì với 1 Thin-Pool 8GB, ta có thể chia ra số Thin Volume Client có tổng dung lượng lớn hơn 8GB nhưng tổng mức dùng của các Thin Volume Client ko lớn hơn 8GB.
 
 <a name="3"></a>
-###3 Tính năng Manage Multiple Logical Volume Management Disks using Striping I/O
+### 3 Tính năng Manage Multiple Logical Volume Management Disks using Striping I/O
 
 LVM Striping là tính năng cho phép ghi dữ liệu lên nhiều ổ thay vì chỉ một ổ Physical volume.
 
@@ -236,7 +236,7 @@ Phần dung lượng còn lại của sdb1,sbc1,sbd1 sau khi chia cho Thin-Pool
 <img src=http://i.imgur.com/xZlRkgq.png>
 
 <a name="4"></a>
-###4 Tính năng LVM Migration
+### 4 Tính năng LVM Migration
 
 Tính năng này cho phép di chuyển dữ liệu từ logical volumes sang một ổ mới mà không làm mất dữ liệu hoặc downtime. Có thể áp dụng với disk SATA,SSD,SAN storage iSCSI or FC
 
